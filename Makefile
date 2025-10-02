@@ -1,8 +1,9 @@
 
-SRC		=	main.py
+SRC			=	main.py
+DATAFILE	=	data.csv
 
 all:
-	python3 $(SRC)
+	python3 $(SRC) $(DATAFILE)
 
 push:
 	@echo -n "enter the commit text: "
