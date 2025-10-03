@@ -6,8 +6,10 @@ import sys
 class LinearRegression:
 
     def __init__(self):
-        self.theta = 0
+        self.theta = 0.5
         self.theta0 = 0
+        self.thetaTmp = 0.5
+        self.theta0Tmp = 0
         self.xFeatures = np.array([])
         self.yFeatures = np.array([])
         self.M  = None
@@ -33,4 +35,18 @@ class LinearRegression:
     
     def lossFunction(self):
 
+        predictions = self.xFeatures.dot(self.theta)
+        # in this case this line is useless cuz its zero
+        predictions += self.theta0
+
+        cost = np.sum(np.square(predictions - self.yFeatures)) * (1 / self.M)
+        # print(predictions)
+        return cost
+        # return (y - yprime)
+
+    def gradient_descent(self, LR: float):
+
+
+        
+        ...
         raise NotImplemented

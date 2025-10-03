@@ -13,6 +13,7 @@ def main():
     model.loadData(sys.argv[1])
 
     print(f"M: {model.M}")
+    print(f"{model.lossFunction(0, 0):.0f}")
     plt.scatter(model.xFeatures, model.yFeatures)
     plt.xlabel('Prices')      # X-axis label
     plt.ylabel('Mileage')
