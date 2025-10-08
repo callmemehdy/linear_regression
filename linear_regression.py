@@ -6,9 +6,9 @@ import sys
 class LinearRegression:
 
     def __init__(self):
-        self.theta = 0.5
+        self.theta = 0
         self.theta0 = 0
-        self.thetaTmp = 0.5
+        self.thetaTmp = 0
         self.theta0Tmp = 0
         self.xFeatures = np.array([])
         self.yFeatures = np.array([])
@@ -23,7 +23,10 @@ class LinearRegression:
             self.yFeatures = df["price"].values
             self.M  = len(self.xFeatures)
             # Ys = np.sort(Ys, kind='quicksort')
-        
+        # Feature scaling (normalize to mean=0, std=1)
+            # self.xFeatures = (self.xFeatures - np.mean(self.xFeatures)) / np.std(self.xFeatures)
+            # self.yFeatures = (self.yFeatures - np.mean(self.yFeatures)) / np.std(self.yFeatures)
+
         except:
             print("file cant be opened!")
         return df
@@ -47,6 +50,16 @@ class LinearRegression:
     def gradient_descent(self, LR: float):
 
 
+        for i in range(1000): 
+            Y_pred = self.thetaTmp * self.xFeatures + self.theta0Tmp
+            D_m = (-2/self.M) * sum(self.xFeatures * (self.yFeatures - Y_pred))
+            D_c = (-2/self.M) * sum(self.yFeatures - Y_pred)
+            self.thetaTmp = self.thetaTmp - LR * D_m
+            self.theta0Tmp = self.theta0Tmp - LR * D_c 
         
-        ...
-        raise NotImplemented
+        Y_pred = self.thetaTmp * self.xFeatures + self.theta0
+
+        plt.scatter(self.xFeatures, self.yFeatures) 
+        plt.plot([min(self.xFeatures), max(self.xFeatures)], [min(Y_pred), max(Y_pred)], color='red')  # regression line
+        plt.show()
+        print (self.thetaTmp, self.theta0Tmp)
