@@ -65,6 +65,8 @@ class LinearRegression:
 
         x_scaled = (self.x_original - self.x_mean) / self.x_std
         y_scaled = (self.y_original - self.y_mean) / self.y_std
+        # x_scaled = self.x_original
+        # y_scaled = self.y_original
 
         cost_history = []
         
@@ -92,6 +94,9 @@ class LinearRegression:
 
         self.final_theta1 = self.theta1 * (self.y_std / self.x_std)
         self.final_theta0 = self.y_mean - self.final_theta1 * self.x_mean
+
+        # self.final_theta1 = self.theta1
+        # self.final_theta0 = self.theta0
 
         print(f"\nFinal parameters (on scaled data) after {i+1} iterations:")
         print(f"  Scaled Theta0: {self.theta0:.8f}")
