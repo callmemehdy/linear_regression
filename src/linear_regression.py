@@ -90,9 +90,6 @@ class LinearRegression:
             cost_history.append(current_cost)
 
 
-        # --- Denormalize thetas AFTER training on scaled data ---
-        # This transforms the scaled parameters (theta0, theta1) into parameters
-        # (final_theta0, final_theta1) that work directly on original X to predict original Y.
         self.final_theta1 = self.theta1 * (self.y_std / self.x_std)
         self.final_theta0 = self.y_mean - self.final_theta1 * self.x_mean
 
