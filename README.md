@@ -121,15 +121,4 @@ download
 content_copy
 expand_less
 python3 src/main.py --info
-
-This command will output a description of your dataset, its shape, and the configured learning rate and number of iterations, then exit.
-
-The myreadme.md File
-
-The myreadme.md file located in the root of this repository is a separate document. It provides an explanation of fundamental calculus differentiation rules (Scalar Multiple Rule, Sum Rule, and Chain Rule). This file serves as a theoretical reference for understanding the mathematical principles behind the gradient calculations used in the gradient descent algorithm. It is not directly linked to the execution or functionality of the Python code but offers valuable background knowledge.
-
-code
-Code
-download
-content_copy
-expand_less
+```
