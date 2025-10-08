@@ -79,46 +79,24 @@ The `main.py` script handles the training and evaluation of the linear regressio
 You can initiate the training process either through the provided `Makefile` or by directly executing `main.py`.
 
 **Using the Makefile:**
+Got it, you want the Usage section of the README.md formatted correctly, with proper code blocks and headings. Here it is:
+
+code
+Markdown
+download
+content_copy
+expand_less
+### Usage
+
+The `main.py` script handles the training and evaluation of the linear regression model.
+
+#### Training the Model
+
+You can initiate the training process either through the provided `Makefile` or by directly executing `main.py`.
+
+**Using the Makefile:**
 
 The `Makefile` includes a default target, `all`, which runs the training with a set of predefined parameters (a learning rate of `0.001` and `3000` iterations).
-```bash
-make all
 
-Running main.py Directly:
 
-You have the flexibility to specify the learning_rate (using -l or --learning_rate) and the number_of_iterations (using -i or --number_of_iterations) when you run main.py.
-
-Example of training with custom parameters:
-
-code
-Bash
-download
-content_copy
-expand_less
-python3 src/main.py --learning_rate 0.05 --number_of_iterations 10000
-
-After training, the script will:
-
-Print progress updates during the gradient descent process.
-
-Display the final learned parameters for both scaled and original data.
-
-Generate graphical plots showing the regression line and the training cost history.
-
-Save the final model parameters to theta.csv.
-
-Report the Mean Squared Error (MSE) to indicate model precision.
-
-Provide an example prediction for a new car mileage.
-
-Displaying Dataset Information
-
-To get quick statistics about your data.csv and see the hyperparameters that would be used for training without actually starting the training process, use the --info flag:
-
-code
-Bash
-download
-content_copy
-expand_less
-python3 src/main.py --info
-```
+### Thanks for reviewing!!
